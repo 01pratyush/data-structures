@@ -8,7 +8,7 @@ void min_heapify(int A[], int i , int N) {
 
     if (left <= N && A[left] < A[i]) smallest = left;
 
-    if (right <= N && A[right] > A[smallest]) smallest = right;
+    if (right <= N && A[right] < A[smallest]) smallest = right;
 
     if (smallest!=i) {
         swap(A[i] , A[smallest]);
@@ -16,10 +16,10 @@ void min_heapify(int A[], int i , int N) {
     }
 }
 
-void build_meanHeap(int A[] , int N) {
+void build_minHeap(int A[] , int N) {
 
     for ( int i = N/2 ; i >=1 ; i--) {
-        
+
         min_heapify(A , i , N);
     }
 }
